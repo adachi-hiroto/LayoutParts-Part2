@@ -1,1 +1,39 @@
 @charset "UTF-8";
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.balloon{
+    position: relative;
+    display: inline-block;
+    width: 500px;
+    padding: 20px;
+    font-size: 16px;
+    line-height: 16px;
+    background: #fad296;
+    border: solid 5px #8f5a0a;
+    border-radius: 30px;
+    margin: 0;
+}
+/* 吹き出しのしっぽ:本体の背景色用 */
+.balloon:before{
+    content: "";
+    position: absolute;
+    bottom: -38px;
+    border: solid 20px transparent;
+    border-top: solid 20px #fad296;
+    left: 30px;
+    z-index: 2;
+}
+/* 吹き出しのしっぽ:枠線の色用 */
+.balloon:after{
+    content: "";
+    position: absolute;
+    bottom: -45px;
+    left: 50px;
+    transform: translateX(-50%);
+    border: solid 20px transparent;
+    border-top: solid 20px #8f5a0a;
+    z-index: 1;
+}
